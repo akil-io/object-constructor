@@ -1,0 +1,22 @@
+{
+  "name": "object-constructor",
+  "version": "1.0.0",
+  "description": "Plain object constructor with enhanced properties",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Alex Martynov <fenixdeveloper@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akil-io/object-constructor"
+  },
+  "bugs": {
+    "url": "https://github.com/akil-io/object-constructor/issues"
+  },
+  "keywords": [
+    "bootloader",
+    "micro framework"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
