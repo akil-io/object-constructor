@@ -1,6 +1,6 @@
 {
   "name": "object-constructor",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Plain object constructor with enhanced properties",
   "main": "index.js",
   "license": "MIT",
