@@ -15,26 +15,30 @@ class StaticSchema {
     }
 }
 
-Object.prototype.public = function (name, value) {
-    Schema.define(this, [
-        Schema.public(name, value)
-    ]);
-};
-Object.prototype.protected = function (name, value) {
-    Schema.define(this, [
-        Schema.protected(name, value)
-    ]);
-};
-Object.prototype.readonly = function (name, value) {
-    Schema.define(this, [
-        Schema.readonly(name, value)
-    ]);
-};
-Object.prototype.method = function (name, func, isBindable) {
-    Schema.define(this, [
-        Schema.method(name, func, isBindable)
-    ]);
-};
+const ObjectExtension = Schema([
+    Schema.method('definePublic', function (ctx, name, value) {
+        Schema.define(ctx, [
+            Schema.public(name, value)
+        ]);
+    }),
+    Schema.method('defineProtected', function (ctx, name, value) {
+        Schema.define(ctx, [
+            Schema.protected(name, value)
+        ]);
+    }),
+    Schema.method('defineReadonly', function (ctx, name, value) {
+        Schema.define(ctx, [
+            Schema.readonly(name, value)
+        ]);
+    }),
+    Schema.method('defineMethod', function (ctx, name, func, isBindable) {
+        Schema.define(ctx, [
+            Schema.method(name, func, isBindable)
+        ]);
+    })
+]);
+
+Schema.define(Object, ObjectExtension);
 
 module.exports = {
     Schema,
