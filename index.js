@@ -15,6 +15,27 @@ class StaticSchema {
     }
 }
 
+Object.prototype.public = function (name, value) {
+    Schema.define(this, [
+        Schema.public(name, value)
+    ]);
+};
+Object.prototype.protected = function (name, value) {
+    Schema.define(this, [
+        Schema.protected(name, value)
+    ]);
+};
+Object.prototype.readonly = function (name, value) {
+    Schema.define(this, [
+        Schema.readonly(name, value)
+    ]);
+};
+Object.prototype.method = function (name, func, isBindable) {
+    Schema.define(this, [
+        Schema.method(name, func, isBindable)
+    ]);
+};
+
 module.exports = {
     Schema,
     deepMerge,
