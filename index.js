@@ -38,7 +38,7 @@ const ObjectExtension = Schema([
     })
 ]);
 
-Schema.define(Object, ObjectExtension);
+ObjectExtension.apply(Object);
 
 module.exports = {
     Schema,

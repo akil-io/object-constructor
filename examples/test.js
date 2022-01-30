@@ -56,4 +56,6 @@ console.log(`user: `, u);
 console.log(`user default: `, u.view());
 
 
-
+let testObj = {};
+Object.definePublic(testObj, 'val1', 78);
+console.log(testObj);
